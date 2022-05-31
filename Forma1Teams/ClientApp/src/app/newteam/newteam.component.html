@@ -1,0 +1,47 @@
+<p>
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <figure class="text-center">
+      <h1>Új csapat</h1>
+    </figure>
+    <form #teamPost="ngForm" (ngSubmit)="onSubmit(teamPost.value)">
+      <div class="mb-3 row">
+        <label for="name" class="col-sm-3 col-form-label">Név</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="name" name="name" ngModel>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="fundation" class="col-sm-3 col-form-label">Alapítás éve</label>
+        <div class="col-sm-9">
+          <input type="number" placeholder="YYYY" min="1900" max="2100" class="form-control" id="fundation" name="fundation" ngModel>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="win" class="col-sm-3 col-form-label">Megnyert világbajnokságok száma</label>
+        <div class="col-sm-9">
+          <input type="number"  min="0"  class="form-control" id="win" name="win" ngModel>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="paid" class="col-sm-3 col-form-label">Befizette a nevezési díjat</label>
+        <div class ="col-sm-9">
+          <input type="checkbox" id="paid" name="paid" ngModel>
+        </div>
+      </div>
+
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+
+        <button type="submit" class="btn btn-dark">Mentés</button>
+
+      </div>
+    </form>
+    <div class="d-grid justify-content-md-end">
+      <a href="/teams" class="btn btn-outline-dark" type="button">Vissza</a>
+    </div>
+  </div>
+
+

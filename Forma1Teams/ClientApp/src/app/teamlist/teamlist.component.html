@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="d-grid gap-2 col-8 mx-auto">
+  <figure class="text-center">
+    <h1>Forma 1</h1>
+  </figure>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Név</th>
+        <th scope="col">Alapítás éve</th>
+        <th scope="col">Megnyert világbajnokságok száma</th>
+        <th scope="col">Befizette a nevezési díjat</th>
+        <th scope="col">Módosítás</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams; index as i; first as isFirst">
+        <th scope="col">{{team.name}}</th>
+        <th scope="col">{{team.fundation}}</th>
+        <th scope="col">{{team.win}}</th>
+        <th scope="col" *ngIf="team.paid">Igen</th>
+        <th scope="col" *ngIf="!team.paid">Nem</th>
+        <th scope="col" class="btn" (click)="update(team.id)"><i class="fa fa-pencil-square"></i></th>
+      </tr>
+    </tbody>
+  </table>
+
